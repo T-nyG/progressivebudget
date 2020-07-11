@@ -19,7 +19,9 @@ const MONGODB_URI = process.env.MONGODB_URL || "mongodb://localhost/budget"
 
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useCreateIndex: true,
+  family: 4 // Use IPv4, skip trying IPv6
 });
 
 // routes
